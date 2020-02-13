@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard One | Notika - Notika Admin Template</title>
+    <title>@yield('page_title')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -352,6 +352,8 @@
                     <div id="Home" class="tab-pane in active notika-tab-menu-bg animated flipInX">
                         <ul class="notika-main-menu-dropdown">
                             <li><a href="/admin-home">Dashboard</a>
+                            </li>
+                            <li><a href="/admin-product">Product</a>
                             </li>
                         </ul>
                     </div>
