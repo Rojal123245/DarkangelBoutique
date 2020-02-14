@@ -12,7 +12,8 @@ class Category extends Model
     protected $guarded = [];
     protected $table = 'categories';
 
-    public function category(){
-        return $this->belongsTo('App\Category');
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

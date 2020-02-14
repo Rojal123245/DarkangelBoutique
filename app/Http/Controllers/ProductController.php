@@ -11,6 +11,7 @@ use Illuminate\Http\Response;
 class ProductController extends Controller
 {
     protected $viewPath = 'admin.product';
+
     public function index()
     {
         $page['page_title'] = "All Products - Table";

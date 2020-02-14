@@ -18,6 +18,7 @@
                                     <th>Product Price</th>
                                     <th>Product type</th>
                                     <th>Description</th>
+                                    <th>Categories</th>
                                     <th>status</th>
                                     <th>Action</th>
                                 </tr>
@@ -29,6 +30,7 @@
                                     <td>{{$prod->prod_price}}</td>
                                     <td>{{$prod->prod_type}}</td>
                                     <td>{{$prod->prod_desc}}</td>
+                                    <td>{{$prod->category->category_name}}</td>
                                     <td>{{$prod->status}}</td>
                                     <td>
                                         <a href="{{route('prod.edit', $prod->id)}}" class="btnEditDep btn btn-primary btn-xs"  title="Update items">
@@ -42,16 +44,7 @@
                                 </tr>
                                 @endforeach
                                 </tbody>
-                                <tfoot>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
-                                </tr>
-                                </tfoot>
+
                             </table>
                         </div>
                     </div>
