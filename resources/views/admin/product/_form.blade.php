@@ -64,9 +64,14 @@
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
         <div class="bootstrap-select fm-cmp-mg">
-            <select class="selectpicker" name="categories id" data-live-search="true">
+            <select class="selectpicker" name="categories_id" data-live-search="true">
+
                 @foreach($categories as $category)
-                    <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                    @if(isset($product))
+                          <option value="{{ $category->id }}" @if ($product->categories_id == $category->id) selected ="selected" @endif >{{ $category->category_name }}</option>
+                    @else
+                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                    @endif
                 @endforeach
             </select>
         </div>

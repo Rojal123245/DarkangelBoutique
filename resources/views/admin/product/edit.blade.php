@@ -18,7 +18,8 @@
                     <div class="form-element-list col-md-12 ">
 
                         {{ Form::model($product,['method'=>'PUT','route'=>['prod.update', $product->id], 'id' => 'frmitems', 'files' => true, 'enctype' => 'multipart/form-data']) }}
-                        @include('admin.product._form')
+                            @include('admin.product._form')
+
                         <button class="btn btn-success pull-right" type="submit" style="margin-top: 15px !important;" >Submit</button>
                         {{ Form::close() }}
 
