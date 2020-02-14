@@ -31,10 +31,10 @@
                                     <td>{{$prod->prod_desc}}</td>
                                     <td>{{$prod->status}}</td>
                                     <td>
-                                        <a href="" class="btnEditDep btn btn-primary btn-xs"  title="Update items">
+                                        <a href="{{route('prod.edit', $prod->id)}}" class="btnEditDep btn btn-primary btn-xs"  title="Update items">
                                             <i class="fa fa-pencil"></i>
                                         </a>
-                                        <a href="" >
+                                        <a href="{{route('prod.destroy',$prod->id)}}" >
                                             <button class="btn btn-danger btn-xs">
                                                 <i class="fa fa-trash-o "></i></button>
                                         </a>

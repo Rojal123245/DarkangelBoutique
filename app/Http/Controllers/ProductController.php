@@ -65,9 +65,9 @@ class ProductController extends Controller
      */
     public function update(ProductCreateRequest $request, $id)
     {
-        dd($request);
-        $produpdate = Product::update($request->all());
-        return redirect()->back()->with('success','Product Has been created');
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
+        return redirect()->back()->with('success','Product Has been Updated');
     }
 
     /**
@@ -78,6 +78,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect()->back();
     }
 }
