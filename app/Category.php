@@ -10,4 +10,9 @@ class Category extends Model
     use SoftDeletes;
 
     protected $guarded = [];
+    protected $table = 'categories';
+
+    public function category(){
+        return $this->belongsTo('App\Category');
+    }
 }

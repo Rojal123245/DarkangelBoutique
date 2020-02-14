@@ -38,6 +38,7 @@
     <link rel="stylesheet" href={{asset("admin/css/scrollbar/jquery.mCustomScrollbar.min.css")}}>
     <!-- jvectormap CSS
 		============================================ -->
+    <link rel="stylesheet" href={{asset("admin/css/bootstrap-select/bootstrap-select.css")}}>
     <link rel="stylesheet" href={{asset("admin/css/jvectormap/jquery-jvectormap-2.0.3.css")}}>
     <!-- notika icon CSS
 		============================================ -->
@@ -57,6 +58,12 @@
     <!-- modernizr JS
 		============================================ -->
     <script src={{asset("admin/js/vendor/modernizr-2.8.3.min.js")}}></script>
+
+    <link rel="stylesheet" href={{asset("admin/css/dropzone/dropzone.css")}}>
+    <!-- dropzone CSS
+     ============================================ -->
+     <link rel="stylesheet" href={{asset("admin/css/chosen/chosen.css")}}>
+
 </head>
 
 <body>
@@ -525,6 +532,13 @@
 <script src={{asset("admin/js/knob/jquery.knob.js")}}></script>
 <script src={{asset("admin/js/knob/jquery.appear.js")}}></script>
 <script src={{asset("admin/js/knob/knob-active.js")}}></script>
+<!-- Input Mask JS
+============================================ -->
+<script src={{asset("admin/js/jasny-bootstrap.min.js")}}></script>
+<!-- icheck JS
+		============================================ -->
+<script src={{asset("admin/js/icheck/icheck.min.js")}}></script>
+<script src={{asset("admin/js/icheck/icheck-active.js")}}></script>
 <!--  wave JS
     ============================================ -->
 <script src={{asset("admin/js/wave/waves.min.js")}}></script>
@@ -545,6 +559,12 @@
 <!-- tawk chat JS
     ============================================ -->
 <script src={{asset("admin/js/tawk-chat.js")}}></script>
+<!-- bootstrap select JS
+		============================================ -->
+<script src={{asset("admin/js/bootstrap-select/bootstrap-select.js")}}></script>
+<!--  chosen JS
+       ============================================ -->
+<script src={{asset("admin/js/chosen/chosen.jquery.js")}}></script>
 </body>
 
 </html>
