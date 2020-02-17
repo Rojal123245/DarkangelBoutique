@@ -12,6 +12,11 @@ class ProductController extends Controller
 {
     protected $viewPath = 'admin.product';
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $page['page_title'] = "All Products - Table";

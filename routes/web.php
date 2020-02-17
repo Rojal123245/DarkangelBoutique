@@ -13,6 +13,7 @@
 
 
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 use function foo\func;
 
 Route::get('/', function () {
@@ -49,7 +50,6 @@ Route::get('/admin-category/{id}', 'CategoryController@destroy')->name('category
 //Route::get('/admin-product', function (){
 //
 //});
-
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
