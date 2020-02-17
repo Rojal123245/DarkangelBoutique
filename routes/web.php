@@ -49,3 +49,7 @@ Route::get('/admin-category/{id}', 'CategoryController@destroy')->name('category
 //Route::get('/admin-product', function (){
 //
 //});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
