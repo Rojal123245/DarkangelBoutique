@@ -244,6 +244,7 @@
                             <li><a data-toggle="collapse" data-target="#Charts" href="#">Home</a>
                                 <ul class="collapse dropdown-header-top">
                                     <li><a href="/admin-home">Dashboard One</a></li>
+
                                 </ul>
                             </li>
                             <li><a data-toggle="collapse" data-target="#demoevent" href="#">Email</a>
@@ -361,6 +362,8 @@
                             <li><a href="/admin-home">Dashboard</a>
                             </li>
                             <li><a href="/admin-product">Product</a>
+                            </li>
+                            <li><a href="/admin-category">Category</a>
                             </li>
                         </ul>
                     </div>

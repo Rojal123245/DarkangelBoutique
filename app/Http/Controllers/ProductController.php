@@ -39,7 +39,16 @@ class ProductController extends Controller
      */
     public function store(ProductCreateRequest $request)
     {
-        $prodSave = Product::create($request->all());
+
+        if($request->hasfile('filename'))
+        {
+            foreach($request->file('filename') as $image)
+            {
+                $path = $image->store('images');
+                $request->merge(['prod_img' => $path]);
+            }
+        }
+        $prodSave = Product::create($request->except('filename'));
         return redirect()->back()->with('success','Product Has been created');
     }
 
