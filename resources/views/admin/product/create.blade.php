@@ -18,27 +18,29 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="form-element-list col-md-12 ">
 
-    {{ Form::open(['route'=>'prod.store', 'files' => true, 'enctype' => 'multipart/form-data']) }}
+                        {{ Form::open(['route'=>'prod.store', 'files' => true, 'enctype' => 'multipart/form-data']) }}
                         @csrf
-    @include('admin.product._form')
-     <button class="btn btn-success pull-right" type="submit" style="margin-top: 15px !important;" >Submit</button>
-    {{ Form::close() }}
+                        @include('admin.product._form')
+                        <button class="btn btn-success pull-right" type="submit" style="margin-top: 15px !important;">
+                            Submit
+                        </button>
+                        {{ Form::close() }}
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
     <script type="text/javascript">
 
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-            $(".btn-success").click(function(){
+            $(".btn-success").click(function () {
                 var html = $(".clone").html();
                 $(".increment").after(html);
             });
 
-            $("body").on("click",".btn-danger",function(){
+            $("body").on("click", ".btn-danger", function () {
                 $(this).parents(".control-group").remove();
             });
 

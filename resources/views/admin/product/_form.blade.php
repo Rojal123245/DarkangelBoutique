@@ -1,6 +1,3 @@
-
-
-
 <div class="basic-tb-hd">
     <h2>Create a Product</h2>
     <p>Fill the form to create a new product.</p>
@@ -77,14 +74,14 @@
         </div>
     </div>
     <div class="input-group control-group increment" >
-        <input type="file" name="filename[]" class="form-control">
+        <input type="file" name="filename[]" class="form-control" multiple="multiple">
         <div class="input-group-btn">
             <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
         </div>
     </div>
     <div class="clone hide">
         <div class="control-group input-group" style="margin-top:10px">
-            <input type="file" name="filename[]" class="form-control">
+            <input type="file" name="filename[]" class="form-control" >
             <div class="input-group-btn">
                 <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
             </div>
