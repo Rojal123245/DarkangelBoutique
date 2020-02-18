@@ -5,47 +5,53 @@
 <!-- Product Catagories Area Start -->
 <div class="products-catagories-area clearfix">
     <div class="amado-pro-catagory clearfix">
-
         <!-- Single Catagory -->
-        <div class="single-products-catagory clearfix">
-            <a href="/shop">
-                <img src="img/bg-img/1.jpg" alt="">
-                <!-- Hover Content -->
-                <div class="hover-content">
-                    <div class="line"></div>
-                    <p>From $180</p>
-                    <h4>Modern Chair</h4>
-                </div>
-            </a>
-        </div>
+        @foreach($prod_data as $key => $prod)
+            @if($key % 2 == 0)
+            <div class="single-products-catagory clearfix">
+                <a href="/shop">
+                    <img src="img/bg-img/1.jpg" alt="">
+                    <!-- Hover Content -->
 
-        <!-- Single Catagory -->
+                    <div class="hover-content">
+                        <div class="line"></div>
+
+                        <p>{{$prod->prod_price}}</p>
+                        <h4>{{$prod->prod_name}}</h4>
+
+                    </div>
+                </a>
+            </div>
+            @else
+
+      <!-- Single Catagory -->
         <div class="single-products-catagory clearfix">
             <a href="shop.html">
                 <img src="img/bg-img/2.jpg" alt="">
                 <!-- Hover Content -->
                 <div class="hover-content">
                     <div class="line"></div>
-                    <p>From $180</p>
-                    <h4>Minimalistic Plant Pot</h4>
+                    <p>{{$prod->prod_price}}</p>
+                    <h4>{{$prod->prod_name}}</h4>
                 </div>
             </a>
         </div>
-
-        <!-- Single Catagory -->
+      @endif
+        @endforeach
+{{--        <!-- Single Catagory -->
         <div class="single-products-catagory clearfix">
             <a href="shop.html">
                 <img src="img/bg-img/3.jpg" alt="">
                 <!-- Hover Content -->
                 <div class="hover-content">
                     <div class="line"></div>
-                    <p>From $180</p>
-                    <h4>Modern Chair</h4>
+                    <p>{{$prod->prod_price}}</p>
+                    <h4>{{$prod->prod_name}}</h4>
                 </div>
             </a>
-        </div>
+        </div>--}}
 
-        <!-- Single Catagory -->
+      {{--  <!-- Single Catagory -->
         <div class="single-products-catagory clearfix">
             <a href="shop.html">
                 <img src="img/bg-img/4.jpg" alt="">
@@ -122,7 +128,7 @@
                 </div>
             </a>
         </div>
-    </div>
+    </div>--}}
 </div>
 <!-- Product Catagories Area End -->
 </div>

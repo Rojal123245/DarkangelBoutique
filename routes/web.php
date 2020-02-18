@@ -50,6 +50,7 @@ Route::get('/admin-category/{id}', 'CategoryController@destroy')->name('category
 //Route::get('/admin-product', function (){
 //
 //});
-Auth::routes(['register' => false]);
+Auth::routes();
+/*Route::get('/home', 'HomeController@index')->name('home');*/
+Route::get('/', 'FrontendController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
