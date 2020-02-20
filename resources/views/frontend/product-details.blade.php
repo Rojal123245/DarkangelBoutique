@@ -23,34 +23,34 @@
                     <div class="single_product_thumb">
                         <div id="product_details_slider" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url(img/product-img/pro-big-1.jpg);">
+                                <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url({{asset('img/product-img/pro-big-1.jpg')}});">
                                 </li>
-                                <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url(img/product-img/pro-big-2.jpg);">
+                                <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url({{asset('img/product-img/pro-big-2.jpg')}});">
                                 </li>
-                                <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url(img/product-img/pro-big-3.jpg);">
+                                <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url({{asset("img/product-img/pro-big-3.jpg")}});">
                                 </li>
-                                <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url(img/product-img/pro-big-4.jpg);">
+                                <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url({{asset("img/product-img/pro-big-4.jpg")}});">
                                 </li>
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <a class="gallery_img" href="img/product-img/pro-big-1.jpg">
-                                        <img class="d-block w-100" src="img/product-img/pro-big-1.jpg" alt="First slide">
+                                        <img class="d-block w-100" src="{{asset("img/product-img/pro-big-1.jpg")}}" alt="First slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
                                     <a class="gallery_img" href="img/product-img/pro-big-2.jpg">
-                                        <img class="d-block w-100" src="img/product-img/pro-big-2.jpg" alt="Second slide">
+                                        <img class="d-block w-100" src="{{asset("img/product-img/pro-big-2.jpg")}}" alt="Second slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
                                     <a class="gallery_img" href="img/product-img/pro-big-3.jpg">
-                                        <img class="d-block w-100" src="img/product-img/pro-big-3.jpg" alt="Third slide">
+                                        <img class="d-block w-100" src="{{asset("img/product-img/pro-big-3.jpg")}}" alt="Third slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
                                     <a class="gallery_img" href="img/product-img/pro-big-4.jpg">
-                                        <img class="d-block w-100" src="img/product-img/pro-big-4.jpg" alt="Fourth slide">
+                                        <img class="d-block w-100" src="{{asset("img/product-img/pro-big-4.jpg")}}" alt="Fourth slide">
                                     </a>
                                 </div>
                             </div>
@@ -62,9 +62,9 @@
                         <!-- Product Meta Data -->
                         <div class="product-meta-data">
                             <div class="line"></div>
-                            <p class="product-price">$180</p>
+                            <p class="product-price">{{$product->prod_price}}</p>
                             <a href="product-details.html">
-                                <h6>White Modern Chair</h6>
+                                <h6>{{$product->prod_name}}</h6>
                             </a>
                             <!-- Ratings & Review -->
                             <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
@@ -80,15 +80,15 @@
                                 </div>
                             </div>
                             <!-- Avaiable -->
-                            <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+                            <p class="avaibility"><i class="fa fa-circle"></i> {{$product->status}}</p>
                         </div>
 
                         <div class="short_overview my-5">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quae eveniet culpa officia quidem mollitia impedit iste asperiores nisi reprehenderit consequatur, autem, nostrum pariatur enim?</p>
+                            <p>{{$product->prod_desc}}</p>
                         </div>
 
                         <!-- Add to Cart Form -->
-                        <form class="cart clearfix" method="post">
+                       {{-- <form class="cart clearfix" method="post">
                             <div class="cart-btn d-flex mb-50">
                                 <p>Qty</p>
                                 <div class="quantity">
@@ -98,7 +98,7 @@
                                 </div>
                             </div>
                             <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
-                        </form>
+                        </form>--}}
 
                     </div>
                 </div>

@@ -7,8 +7,8 @@
     <div class="amado-pro-catagory clearfix">
         @foreach($prod_data as $prod)
                 <div class="single-products-catagory clearfix">
-                    <a href="/shop">
-                            <img src="{{ asset('/') }}storage/{{$prod->cover_img}}" alt="">
+                    <a href="{{route('front.show', $prod->id)}}">
+                           <img src="{{ asset('/') }}storage/{{$prod->cover_img}}" alt="">
                         <!-- Hover Content -->
 
                         <div class="hover-content">

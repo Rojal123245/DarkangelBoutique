@@ -14,7 +14,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        $prod_data = Product::all(['prod_name','prod_price', 'cover_img'])->take(21);
+        $prod_data = Product::all(['id','prod_name','prod_price', 'cover_img'])->take(21);
         /*dd($prod_data);*/
         return view('frontend.home',compact('prod_data'));
     }
@@ -48,7 +48,8 @@ class FrontendController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('frontend.product-details',compact('product'));
     }
 
     /**

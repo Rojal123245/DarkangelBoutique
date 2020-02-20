@@ -16,13 +16,8 @@ use App\Category;
 use Illuminate\Support\Facades\Auth;
 use function foo\func;
 
-Route::get('/', function () {
-    return view('frontend/home');
-});
 
-Route::get('/shop', function (){
-   return view('frontend/shop') ;
-});
+
 
 Route::get('/product-details', function (){
     return view('frontend/product-details');
@@ -47,6 +42,11 @@ Route::post('/admin-category/store', 'CategoryController@store')->name('category
 Route::get('/admin-category/{category}/edit', 'CategoryController@edit')->name('category.edit');
 Route::PUT('/admin-category/{category}/update', 'CategoryController@update')->name('category.update');
 Route::get('/admin-category/{id}', 'CategoryController@destroy')->name('category.destroy');
+
+/* ---------------------------Frontend Routes ------------------------*/
+Route::get('/', 'FrontendController@index')->name("front.home");
+Route::get('/shop/{id}/show', 'FrontendController@show')->name('front.show');
+
 //Route::get('/admin-product', function (){
 //
 //});
