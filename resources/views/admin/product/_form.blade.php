@@ -65,7 +65,10 @@
 
                 @foreach($categories as $category)
                     @if(isset($product))
-                          <option value="{{ $category->id }}" @if ($product->categories_id == $category->id) selected ="selected" @endif >{{ $category->category_name }}</option>
+                        <option value="{{ $category->id }}"
+                                @if ($product->categories_id == $category->id) selected="selected" @endif >{{
+                            $category->category_name }}
+                        </option>
                     @else
                         <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                     @endif
@@ -73,23 +76,31 @@
             </select>
         </div>
     </div>
-    <div class="input-group control-group increment" >
-        <input type="file" name="filename[]" class="form-control" multiple="multiple">
-        <div class="input-group-btn">
-            <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
-        </div>
+</div>
+<label class=" form-control-label">Upload Multi Images</label>
+<div class="input-group control-group increment">
+    <input type="file" name="prod_img[]" class="form-control" multiple="multiple">
+    <div class="input-group-btn">
+        <button class="btn btn-success" type="button"><i class="glyphicon glyphicon-plus"></i>Add</button>
     </div>
-    <div class="clone hide">
-        <div class="control-group input-group" style="margin-top:10px">
-            <input type="file" name="filename[]" class="form-control" >
-            <div class="input-group-btn">
-                <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
-            </div>
+</div>
+<div class="clone hide">
+    <div class="control-group input-group" style="margin-top:10px">
+        <input type="file" name="prod_img[]" class="form-control">
+        <div class="input-group-btn">
+            <button class="btn btn-danger" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
         </div>
     </div>
 </div>
-
-
+<div class="form-group">
+    <label class=" form-control-label">Upload Cover Image</label>
+    <label>
+        <br>
+        <img src="{{ isset($data->image) ? asset('images/new/'.$data->image) : '' }}" width="120" height="80"
+             class="img img-thumbnai"><br>
+        <input name="cover_img" type='file' title="select Cover Image"/>
+    </label>
+</div>
 
 
 
