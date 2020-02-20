@@ -100,6 +100,8 @@ class ProductController extends Controller
     public function update(ProductCreateRequest $request, $id)
     {
         $product = Product::findOrFail($id);
+
+
         $product->update($request->all());
         return redirect()->back()->with('success', 'Product Has been Updated');
     }
