@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -24,20 +25,24 @@ class FrontendController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function shopData()
     {
-        //
+        $categories = Category::all();
+        $products = Product::all();
+        return view('frontend.shop',compact('categories', 'products'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Category $category
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function shopProd(Category $category)
     {
-        //
+        $categories = Category::all();
+
+        return view('frontend.shop-details',compact('category','categories'));
     }
 
     /**

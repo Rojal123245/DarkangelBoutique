@@ -63,7 +63,7 @@
                         <!-- Product Meta Data -->
                         <div class="product-meta-data">
                             <div class="line"></div>
-                            <p class="product-price">{{$product->prod_price}}</p>
+                            <p class="product-price">Rs {{$product->prod_price}}</p>
                             <a href="product-details.html">
                                 <h6>{{$product->prod_name}}</h6>
                             </a>

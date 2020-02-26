@@ -30,8 +30,8 @@ class ProductCreateRequest extends FormRequest
             'status' => 'required',
             'prod_desc' => 'required',
             'categories_id' => 'required|exists:categories,id',
-            'prod_img' => 'required|product_image_count',
-            'prod_img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'prod_img' => 'required|required_image_count',
+            /*'prod_img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',*/
             'cover_img' => 'required'
         ];
     }
@@ -39,7 +39,7 @@ class ProductCreateRequest extends FormRequest
     public function messages()
     {
         return [
-          'product_image_count' => 'You have not uploaded required images for this product.'
+          'required_image_count' => 'You have not uploaded required images for this product.'
         ];
     }
 

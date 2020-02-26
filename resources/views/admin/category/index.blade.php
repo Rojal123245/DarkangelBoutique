@@ -24,7 +24,7 @@
                                     <tr>
                                         <td>{{$category->category_name}}</td>
                                         <td>
-                                            <a href="{{route('category.edit', $category->id)}}" class="btnEditDep btn btn-primary btn-xs"  title="Update items">
+                                            <a href="{{route('category.edit', $category->category_name)}}" class="btnEditDep btn btn-primary btn-xs"  title="Update items">
                                                 <i class="fa fa-pencil"></i>
                                             </a>
                                             <a href="{{route('category.destroy',$category->id)}}" >

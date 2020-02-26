@@ -49,7 +49,7 @@ class ProductController extends Controller
     {
         $cover = $request->file('cover_img');
         $extension = $cover->getClientOriginalExtension();
-        Storage::disk('local')->put($cover->getFilename().'.'.$extension,  File::get($cover));
+        Storage::disk('local')->put('public/' . $cover->getFilename().'.'.$extension,  File::get($cover));
         if($request->hasfile('prod_img'))
         {
 
@@ -65,7 +65,7 @@ class ProductController extends Controller
         $product->prod_price = $request->prod_price;
         $product->prod_type = $request->prod_type;
         $product->prod_desc = $request->prod_desc;
-        $product->categories_id = $request->categories_id;
+        $product->category_id = $request->categories_id;
         $product->status = $request->status;
         $product->cover_img = $cover->getFilename(). '.' . $extension;
         $product->prod_img = json_encode($data);

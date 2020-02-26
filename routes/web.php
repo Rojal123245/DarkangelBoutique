@@ -45,12 +45,15 @@ Route::get('/admin-category/{id}', 'CategoryController@destroy')->name('category
 
 /* ---------------------------Frontend Routes ------------------------*/
 Route::get('/', 'FrontendController@index')->name("front.home");
-Route::get('/shop/{id}/show', 'FrontendController@show')->name('front.show');
+Route::get('/prod-details/{id}/show', 'FrontendController@show')->name('front.show');
+Route::get('/shop', 'FrontendController@shopData')->name('front.shopData');
+Route::get('/shop/{category}/product', 'FrontendController@shopProd')->name('front.shopprod');
+
 
 //Route::get('/admin-product', function (){
 //
 //});
 Auth::routes();
 /*Route::get('/home', 'HomeController@index')->name('home');*/
-Route::get('/', 'FrontendController@index')->name('home');
+/*Route::get('/', 'FrontendController@index')->name('home');*/
 

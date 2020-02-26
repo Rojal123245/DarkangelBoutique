@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Validator::extend('product_image_count',  function($attribute, $value, $parameters) {
+        Validator::extend('required_image_count',  function($attribute, $value, $parameters) {
             if (count($value) != 4) {
                 return false;
             }
