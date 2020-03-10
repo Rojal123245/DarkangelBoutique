@@ -44,10 +44,12 @@ Route::PUT('/admin-category/{category}/update', 'CategoryController@update')->na
 Route::get('/admin-category/{id}', 'CategoryController@destroy')->name('category.destroy');
 
 /* ---------------------------Frontend Routes ------------------------*/
+
 Route::get('/', 'FrontendController@index')->name("front.home");
 Route::get('/prod-details/{id}/show', 'FrontendController@show')->name('front.show');
 Route::get('/shop', 'FrontendController@shopData')->name('front.shopData');
 Route::get('/shop/{category}/product', 'FrontendController@shopProd')->name('front.shopprod');
+
 
 
 //Route::get('/admin-product', function (){

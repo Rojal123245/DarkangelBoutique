@@ -13,14 +13,15 @@
             <div class="catagories-menu">
                 <ul>
                     <li><a href="{{route('front.shopData')}}">All</a></li>
-                    @foreach($categories as $category)
-                        <li><a href="{{route('front.shopprod', $category->category_name)}}">{{$category->category_name}}</a></li>
+                    @foreach($allCategories as $singleCategory)
+                        <li><a href="{{route('front.shopprod', $singleCategory->category_name)}}">{{$singleCategory->category_name}}</a></li>
                     @endforeach
 
                 </ul>
             </div>
         </div>
     </div>
+
 
     <div class="amado_product_area section-padding-100">
         <div class="container-fluid">
@@ -86,6 +87,7 @@
                                     <p class="product-price">Rs {{$product->prod_price}}</p>
                                     <a href="{{route('front.show' , $product->id)}}">
                                         <h6>{{$product->prod_name}}</h6>
+{{--                                        <h6>{{dd($product)}}</h6>--}}
                                     </a>
                                 </div>
                                 <!-- Ratings & Cart -->

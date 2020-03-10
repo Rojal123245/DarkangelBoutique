@@ -40,9 +40,8 @@ class FrontendController extends Controller
      */
     public function shopProd(Category $category)
     {
-        $categories = Category::all();
-
-        return view('frontend.shop-details',compact('category','categories'));
+        $allCategories = Category::all();
+        return view('frontend.shop-details',compact('allCategories', 'category'));
     }
 
     /**
