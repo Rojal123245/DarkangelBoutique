@@ -49,8 +49,10 @@ Route::get('/', 'FrontendController@index')->name("front.home");
 Route::get('/prod-details/{id}/show', 'FrontendController@show')->name('front.show');
 Route::get('/shop', 'FrontendController@shopData')->name('front.shopData');
 Route::get('/shop/{category}/product', 'FrontendController@shopProd')->name('front.shopprod');
-
-
+Route::get('/userRegister', 'FrontendController@userRegister')->name('front.register');
+Route::get('/userLogin', 'FrontendController@userlogin')->name('front.login');
+Route::post('/saveLogin', 'FrontendController@saveLogin')->name('front.savelogin');
+Route::post('/saveRegister', 'FrontendController@saveRegister')->name('front.saveRegister');
 
 //Route::get('/admin-product', function (){
 //

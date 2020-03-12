@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Customer;
+use App\Http\Requests\CustomerCreateRequest;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class FrontendController extends Controller
 {
@@ -55,38 +58,31 @@ class FrontendController extends Controller
         $product = Product::findOrFail($id);
         return view('frontend.product-details',compact('product'));
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    public function userlogin(){
+        return view('frontend.loginregister');
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function userRegister(){
+        return view('frontend.register');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function saveLogin(Request $request)
     {
-        //
+        $model = Customer::where('email', $request->email)->first();
+        if ($model) {
+            if (Hash::check($request->password, $model->password)) {
+                session_start();
+                $_SESSION['useremail'] = $request->email;
+                return redirect()->route('front.home');
+            } else{
+                return redirect()->back()->with('error', 'Email or password did not match');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Email or password did not match');
+        }
+    }
+    public function saveRegister(CustomerCreateRequest $request){
+        $password = Hash::make($request->password);
+        $request->merge(['password' => $password]);
+        $customerSave = Customer::create($request->all());
+        return redirect()->back()->with('success','Registration Successful');
     }
 }

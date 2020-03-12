@@ -1,51 +1,51 @@
 /*-----------------------------------------------------------------------------------
 
-    Template Name: Notika - Notika Admin Template 
-    Template URI: 
+    Template Name: Notika - Notika Admin Template
+    Template URI:
     Description: Notika Admin Template is a responsive admin template based on the famous Bootstrap framework it's easy to edit and customize by documentation.
     Author: lucidtemplate
-    Author URI: 
+    Author URI:
     Version: 1.0
 
 -----------------------------------------------------------------------------------
-    
+
     CSS INDEX
     ===================
-	
+
     1. Theme Default CSS (body, link color, section etc)
-    2. Header Top 
+    2. Header Top
     3. Main Menu
     4. status
-    5. statistics 
+    5. statistics
     6. Email statistics
     7. Recent Post
-    8. Blog 
+    8. Blog
     9. Recent Items
-    10. Realtime 
-    11. Footer 
-    12. Todo 
-    13. Chat 
-    14. Widget 
-    15. Widget contact 
-    16. Widget contact Form 
-    17. Widget tabs 
-    18. Analtic 
-    19. Alert 
-    20. color 
-    21. tabs 
-    22. Wizard 
-    23. Dropdown triggering 
-    24. Modals 
-    25. Accordion 
-    26. Tooltips 
-    27. Popovers 
-    28. Typography 
-    29. Contact 
-    30. Inbox 
-    31. View Mail 
-    32. Compose Mail 
-    33. Normal Table 
-    34. Data Table 
+    10. Realtime
+    11. Footer
+    12. Todo
+    13. Chat
+    14. Widget
+    15. Widget contact
+    16. Widget contact Form
+    17. Widget tabs
+    18. Analtic
+    19. Alert
+    20. color
+    21. tabs
+    22. Wizard
+    23. Dropdown triggering
+    24. Modals
+    25. Accordion
+    26. Tooltips
+    27. Popovers
+    28. Typography
+    29. Contact
+    30. Inbox
+    31. View Mail
+    32. Compose Mail
+    33. Normal Table
+    34. Data Table
     35. Form Element
     36. Form Components
 
@@ -195,7 +195,7 @@ body {}
 .nav.notika-top-nav .open>a, .nav.notika-top-nav .open>a:focus, .nav.notika-top-nav .open>a:hover {
     background: #00c292;
     border-color: 0px solid #00c292;
-	
+
 }
 .nav.notika-top-nav>li>a:focus, .nav.notika-top-nav>li>a:hover {
     text-decoration: none;
@@ -3141,7 +3141,7 @@ textarea.auto-size {
 	padding: 5px 10px;
 }
 .chosen-select-act .chosen-container-multi .chosen-choices li.search-choice span{
-	
+
 }
 .chosen-container-multi .chosen-choices li.search-choice .search-choice-close{
 	width: 15px;
@@ -3590,9 +3590,7 @@ textarea.auto-size {
     vertical-align:top;
     display:inline-block;
 }
-.nk-block:not(.toggled){
-    display:none;
-}
+
 .nk-block.toggled{
     -webkit-animation-name:rollIn;
     animation-name:rollIn;
@@ -3726,7 +3724,7 @@ textarea.auto-size {
 }
 .nk-block, .login-content:before, .error-page-wrap, .error-page-area:before{
     vertical-align: middle;
-    display: inline-block;
+    padding-top: 10%;
 }
 .nk-form p{
 	font-size:14px;
