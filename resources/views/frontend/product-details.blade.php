@@ -77,7 +77,7 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                 </div>
                                 <div class="review">
-                                    <a href="#">Write A Review</a>
+                                    <a href="#" onclick="createReview();">Write A Review</a>
                                 </div>
                             </div>
                             <!-- Avaiable -->
@@ -87,7 +87,7 @@
                         <div class="short_overview my-5">
                             <p>{{$product->prod_desc}}</p>
                         </div>
-
+                        <div id="newElementId" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                         <!-- Add to Cart Form -->
                        {{-- <form class="cart clearfix" method="post">
                             <div class="cart-btn d-flex mb-50">
@@ -108,4 +108,21 @@
     </div>
     <!-- Product Details Area End -->
     </div>
+    <style>
+
+    </style>
+    <script type="text/JavaScript">
+        function createReview() {
+            // First create a DIV element.
+            var txtNewInputBox = document.createElement('div');
+
+            // Then add the content (a new input box) of the element.
+            txtNewInputBox.innerHTML = "<textarea style='display: block; width: 100%; border: 0;padding: 10px 5px;background: white no-repeat; background-image: linear-gradient(to bottom, #1abc9c, #1abc9c), linear-gradient(to bottom, silver, silver); transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1); #newInputBox:focus{ background-size: 100% 2px, 100% 1px;outline: none;}' placeholder='Write a message.' name='description' id='newInputBox' cols='50'></textarea>";
+
+            // Finally put it where it is supposed to appear.
+            document.getElementById("newElementId").appendChild(txtNewInputBox);
+        }
+    </script>
     @endsection
+
+
