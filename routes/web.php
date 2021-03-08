@@ -13,6 +13,8 @@
 
 
 use App\Category;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Auth;
 use function foo\func;
 
@@ -53,7 +55,7 @@ Route::get('/userRegister', 'FrontendController@userRegister')->name('front.regi
 Route::get('/userLogin', 'FrontendController@userlogin')->name('front.login');
 Route::post('/saveLogin', 'FrontendController@saveLogin')->name('front.savelogin');
 Route::post('/saveRegister', 'FrontendController@saveRegister')->name('front.saveRegister');
-
+Route::get('/contactus', 'FrontendController@contact')->name('front.contact');
 //Route::get('/admin-product', function (){
 //
 //});

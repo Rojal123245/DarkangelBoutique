@@ -45,13 +45,13 @@
                                     </a>
                                 </div>
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="{{asset('multiImages/' . json_decode($product->prod_img)[1])}}">
-                                        <img class="d-block w-100" src="{{asset('multiImages/' . json_decode($product->prod_img)[1])}}" alt="Third slide">
+                                    <a class="gallery_img" href="{{asset('multiImages/' . json_decode($product->prod_img)[2])}}">
+                                        <img class="d-block w-100" src="{{asset('multiImages/' . json_decode($product->prod_img)[2])}}" alt="Third slide">
                                     </a>
                                 </div>
                                 <div class="carousel-item">
-                                    <a class="gallery_img" href="{{asset('multiImages/' . json_decode($product->prod_img)[1])}}">
-                                        <img class="d-block w-100" src="{{asset('multiImages/' . json_decode($product->prod_img)[1])}}" alt="Fourth slide">
+                                    <a class="gallery_img" href="{{asset('multiImages/' . json_decode($product->prod_img)[3])}}">
+                                        <img class="d-block w-100" src="{{asset('multiImages/' . json_decode($product->prod_img)[3])}}" alt="Fourth slide">
                                     </a>
                                 </div>
                             </div>
@@ -66,6 +66,7 @@
                             <p class="product-price">Rs {{$product->prod_price}}</p>
                             <a href="product-details.html">
                                 <h6>{{$product->prod_name}}</h6>
+                                <h5>#{{$product->uniqueCode}}{{$product->id}}</h5>
                             </a>
                             <!-- Ratings & Review -->
                             <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
@@ -81,7 +82,11 @@
                                 </div>
                             </div>
                             <!-- Avaiable -->
-                            <p class="avaibility"><i class="fa fa-circle"></i> {{$product->status}}</p>
+                            @if($product->status == "InStock")
+                                <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+                            @else
+                                <p class="avaibility"><i class="fa fa-circle-o"></i> Out of Stock</p>
+                            @endif
                         </div>
 
                         <div class="short_overview my-5">
@@ -117,7 +122,7 @@
             var txtNewInputBox = document.createElement('div');
 
             // Then add the content (a new input box) of the element.
-            txtNewInputBox.innerHTML = "<textarea style='display: block; width: 100%; border: 0;padding: 10px 5px;background: white no-repeat; background-image: linear-gradient(to bottom, #1abc9c, #1abc9c), linear-gradient(to bottom, silver, silver); transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1); #newInputBox:focus{ background-size: 100% 2px, 100% 1px;outline: none;}' placeholder='Write a message.' name='description' id='newInputBox' cols='50'></textarea>";
+            txtNewInputBox.innerHTML = "<link href=\"https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Montserrat+Subrayada|Ranga&display=swap\" rel=\"stylesheet\"><form method='POST' > <textarea id=\"field\" placeholder=\"Type Here\" maxlength=\"3000\" rows=\"10\" cols=\"40\"></textarea><div class=\"message\"></div><button class=\"btn btn-success pull-right\" type=\"submit\" style=\"margin-top: 15px !important;\"> Submit </button></form>";
 
             // Finally put it where it is supposed to appear.
             document.getElementById("newElementId").appendChild(txtNewInputBox);

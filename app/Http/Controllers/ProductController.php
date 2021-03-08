@@ -65,6 +65,7 @@ class ProductController extends Controller
         $product->prod_price = $request->prod_price;
         $product->prod_type = $request->prod_type;
         $product->prod_desc = $request->prod_desc;
+        $product->uniqueCode = $this->generateRandomString() . $product->id;
         $product->category_id = $request->categories_id;
         $product->status = $request->status;
         $product->cover_img = $cover->getFilename(). '.' . $extension;
@@ -117,5 +118,14 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
         return redirect()->back();
+    }
+    function generateRandomString($length = 6) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }

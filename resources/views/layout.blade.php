@@ -71,7 +71,7 @@
             <ul>
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="/shop">Shop</a></li>
-                <li><a href="/product-details">Product</a></li>
+                <li><a href="/contactus">Contact Us</a></li>
 
             </ul>
         </nav>

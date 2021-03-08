@@ -85,4 +85,7 @@ class FrontendController extends Controller
         $customerSave = Customer::create($request->all());
         return redirect()->back()->with('success','Registration Successful');
     }
+    public function contact(){
+        return view('frontend.contactus');
+    }
 }

@@ -54,7 +54,10 @@
                 <i class="notika-icon notika-next"></i>
             </div>
             <div class="nk-int-st">
-                {{ Form::text('status', null, ['class'=>'form-control ', 'placeholder'=>'Enter status', 'id' => '', 'required' => '']) }}
+                <select class="selectpicker" name="status" data-live-search="false">
+                    <option value="InStock">In Stock</option>
+                    <option value="OutofStock">Out of Stock</option>
+                </select>
             </div>
         </div>
     </div>
