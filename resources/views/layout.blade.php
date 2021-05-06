@@ -48,7 +48,7 @@
     <div class="mobile-nav">
         <!-- Navbar Brand -->
         <div class="amado-navbar-brand">
-            <a href="index.html"><img src={{asset("img/core-img/logo.png")}} alt=""></a>
+            <a href="index.html"><img src={{asset("img/core-img/darkangel.jpg")}} alt=""></a>
         </div>
         <!-- Navbar Toggler -->
         <div class="amado-navbar-toggler">
