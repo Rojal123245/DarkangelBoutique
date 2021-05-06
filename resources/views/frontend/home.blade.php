@@ -22,7 +22,7 @@
                 </div>
         @endforeach
 
-</div>
+</div>hp artisan storage:link
 <!-- Product Catagories Area End -->
 </div>
 
