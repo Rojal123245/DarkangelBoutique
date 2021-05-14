@@ -49,7 +49,7 @@ class ProductController extends Controller
     {
         $cover = $request->file('cover_img');
         $extension = $cover->getClientOriginalExtension();
-        Storage::disk('local')->put('public/' . $cover->getFilename().'.'.$extension,  File::get($cover));
+        Storage::disk('public')->put('public/' . $cover->getFilename().'.'.$extension,  File::get($cover));
         if($request->hasfile('prod_img'))
         {
 
