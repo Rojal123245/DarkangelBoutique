@@ -8,4 +8,7 @@
 * Add search functionality
 * imporve the multiple image display and fix bug
 * Create api for all the classes;
+* Create a search using unique code of an item
+* create a rating sytem for an item
+* create a email newsletter
 * New requirement will be added in the future.
