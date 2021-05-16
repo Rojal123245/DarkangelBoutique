@@ -48,7 +48,7 @@
     <div class="mobile-nav">
         <!-- Navbar Brand -->
         <div class="amado-navbar-brand">
-            <a href="index.html"><img src={{asset("img/core-img/logo.png")}} alt=""></a>
+            <a href="index.html"><img src={{asset("img/core-img/darkangel.jpg")}} alt=""></a>
         </div>
         <!-- Navbar Toggler -->
         <div class="amado-navbar-toggler">
@@ -64,14 +64,14 @@
         </div>
         <!-- Logo -->
         <div class="logo">
-            <a href="index.html"><img src={{asset("img/core-img/logo.png")}} alt=""></a>
+            <a href="index.html"><img src={{asset("img/core-img/darkangel.jpg")}} alt=""></a>
         </div>
         <!-- Amado Nav -->
         <nav class="amado-nav">
             <ul>
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/shop">Shop</a></li>
-                <li><a href="/contactus">Contact Us</a></li>
+                <li class="{{ Request::path() === '/' ? 'active' : '' }}"><a href="/">Home</a></li>
+                <li class="{{ Request::path() === 'shop' ? 'active' : '' }}"><a href="/shop">Shop</a></li>
+                <li class="{{ Request::path() === 'contactus' ? 'active' : '' }}"><a href="/contactus">Contact Us</a></li>
 
             </ul>
         </nav>
@@ -85,9 +85,8 @@
         <!-- Social Button -->
         <div class="social-info d-flex justify-content-between">
             <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/ms_darkangel/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/darkangel0986"><i class="fa fa-facebook" aria-hidden="true"></i></a>
         </div>
     </header>
     <!-- Header Area End -->
@@ -106,7 +105,7 @@
                     <div class="single_widget_area">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="index.html"><img src={{asset("img/core-img/logo2.png")}} alt=""></a>
+                            <a href="index.html"><img src={{asset("img/core-img/transparent.png")}} alt=""></a>
                         </div>
                         <!-- Copywrite Text -->
                         <p class="copywrite"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
