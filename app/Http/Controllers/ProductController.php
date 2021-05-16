@@ -49,7 +49,11 @@ class ProductController extends Controller
     {
         $cover = $request->file('cover_img');
         $extension = $cover->getClientOriginalExtension();
-        Storage::disk('public')->put('public/' . $cover->getFilename().'.'.$extension,  File::get($cover));
+      //  Storage::disk('local')->put('public/' . $cover->getFilename().'.'.$extension,  File::get($cover));
+        if($request->hasFile('cover_img')){
+            $request->cover_img->move(public_path().'/coverimg/',$cover->getFilename(). '.' . $extension);
+        }
+       // move(public_path().'/coverimg/',$cover->getFilename(). '.' . $extension);
         if($request->hasfile('prod_img'))
         {
 
