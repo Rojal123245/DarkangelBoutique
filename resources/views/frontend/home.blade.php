@@ -8,7 +8,7 @@
         @foreach($prod_data as $prod)
                 <div class="single-products-catagory clearfix">
                     <a href="{{route('front.show', $prod->id)}}">
-                           <img src="{{ asset('/') }}storage/{{$prod->cover_img}}" alt="">
+                           <img src="{{ asset('/') }}coverimg/{{$prod->cover_img}}" alt="">
                         <!-- Hover Content -->
 
                         <div class="hover-content">

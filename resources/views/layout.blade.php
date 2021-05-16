@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Amado - Furniture Ecommerce Template | Home</title>
+    <title>Darkangel Boutique | Home</title>
 
     <!-- Favicon  -->
     <link rel="icon" href={{asset("img/core-img/favicon.ico")}}>
@@ -64,7 +64,7 @@
         </div>
         <!-- Logo -->
         <div class="logo">
-            <a href="index.html"><img src={{asset("img/core-img/darkangel.jpg")}} alt=""></a>
+            <a href="/"><img src={{asset("img/core-img/darkangel.jpg")}} alt=""></a>
         </div>
         <!-- Amado Nav -->
         <nav class="amado-nav">
@@ -105,7 +105,7 @@
                     <div class="single_widget_area">
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
-                            <a href="index.html"><img src={{asset("img/core-img/transparent.png")}} alt=""></a>
+                            <a href="/"><img src={{asset("img/core-img/transparent.png")}} alt=""></a>
                         </div>
                         <!-- Copywrite Text -->
                         <p class="copywrite"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
