@@ -49,6 +49,9 @@ Route::get('/admin-category/{category}/edit', 'CategoryController@edit')->name('
 Route::PUT('/admin-category/{category}/update', 'CategoryController@update')->name('category.update');
 Route::get('/admin-category/{id}', 'CategoryController@destroy')->name('category.destroy');
 
+/*--------------------------Category_measurement routes ----------------------*/
+Route::get('/admin_category_measure', 'CategoryMeasurementController@store')->name('categoryMeasurement.store');
+
 /* ---------------------------Frontend Routes ------------------------*/
 
 Route::get('/', 'FrontendController@index')->name("front.home");
