@@ -77,9 +77,9 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                 </div>
-                                <div class="review">
-                                    <a href="#" onclick="createReview();">Write A Review</a>
-                                </div>
+{{--                                <div class="review">--}}
+{{--                                    <a href="#" onclick="createReview();">Write A Review</a>--}}
+{{--                                </div>--}}
                             </div>
                             <!-- Avaiable -->
                             @if($product->status == "InStock")
@@ -93,6 +93,56 @@
                             <p>{{$product->prod_desc}}</p>
                         </div>
                         <div id="newElementId" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                        <form method="POST" action="">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Length</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput"  placeholder="Length">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">Shoulder</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
+                            </div>
+                        </form>
                         <!-- Add to Cart Form -->
                        {{-- <form class="cart clearfix" method="post">
                             <div class="cart-btn d-flex mb-50">
