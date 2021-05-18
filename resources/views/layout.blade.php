@@ -78,10 +78,47 @@
         <!-- Button Group -->
 
         <!-- Cart Menu -->
+        <form method="post" action="/search">@csrf
         <div class="cart-fav-search mb-100">
 
-            <a href="#" class="search-nav"><img src={{asset("img/core-img/search.png")}} alt=""> Search</a>
+            <div class="input-group">
+                <div class="form-outline">
+                    <input type="text" id="form1" class="form-control" name="q"/>
+                    <label class="form-label" for="form1">Search</label>
+                </div>
+                <input type="submit" name="submit" value="Submit">
+            </div>
+
+
+{{--            <a href="#" class="search-nav"><img src={{asset("img/core-img/search.png")}} alt=""> Search</a>--}}
         </div>
+        </form>
+{{--        Added from youtube--}}
+        @if(isset($details))
+        <div class ="container">
+            <p>The Search results for your query <b> {{ $query }}</b> are </p>
+            <h1> Sample User Details: </h1>
+             <table class="table table-stripped">
+                 <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                 </thead>
+                 <tbody>
+                    @foreach($details as $user)
+                        <tr>
+                            <td> {{ $user->name }}</td>
+                            <td> {{ $user->email }}</td>
+                        </tr>
+                    @endforeach
+                 </tbody>
+             </table>
+        </div>
+        @elseif(isset($message))
+            <p>{{ $message }}</p>
+        @endif
+
         <!-- Social Button -->
         <div class="social-info d-flex justify-content-between">
             <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
