@@ -16,6 +16,10 @@ use App\Category;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\Console\Input\Input;
+use Illuminate\Http\Request;
+use App\User;
+
 use function foo\func;
 
 
@@ -62,4 +66,24 @@ Route::get('/contactus', 'FrontendController@contact')->name('front.contact');
 Auth::routes();
 /*Route::get('/home', 'HomeController@index')->name('home');*/
 /*Route::get('/', 'FrontendController@index')->name('home');*/
+
+//------------------------Search Routes -------------------------
+
+Route::post('/search', function(){
+    $q = Request('q');
+    dd($q);
+    if($q != " "){
+        $user = User::where('name', 'LIKE', '%' . $q . '%')
+                        ->orWhere('email', 'LIKE', '%' . $q . '%')
+                        ->get();
+        if(count($user) >0)
+            return view('welcome')->withDetails($user)->withQuery($q);
+
+    }
+    return view('welcome')->withMessage("Please Enter a Word");
+
+});
+
+
+//Route::get('/search', 'ShopController@search')->name('search');
 
