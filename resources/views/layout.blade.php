@@ -94,30 +94,7 @@
         </div>
         </form>
 {{--        Added from youtube--}}
-        @if(isset($details))
-        <div class ="container">
-            <p>The Search results for your query <b> {{ $query }}</b> are </p>
-            <h1> Sample User Details: </h1>
-             <table class="table table-stripped">
-                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email</th>
-                    </tr>
-                 </thead>
-                 <tbody>
-                    @foreach($details as $user)
-                        <tr>
-                            <td> {{ $user->name }}</td>
-                            <td> {{ $user->email }}</td>
-                        </tr>
-                    @endforeach
-                 </tbody>
-             </table>
-        </div>
-        @elseif(isset($message))
-            <p>{{ $message }}</p>
-        @endif
+
 
         <!-- Social Button -->
         <div class="social-info d-flex justify-content-between">

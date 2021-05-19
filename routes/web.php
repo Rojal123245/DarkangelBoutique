@@ -15,6 +15,7 @@
 use App\Category;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\FrontendController;
+use App\Product;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\Console\Input\Input;
 use Illuminate\Http\Request;
@@ -74,16 +75,16 @@ Auth::routes();
 
 Route::post('/search', function(){
     $q = Request('q');
-    dd($q);
+
     if($q != " "){
-        $user = User::where('name', 'LIKE', '%' . $q . '%')
-                        ->orWhere('email', 'LIKE', '%' . $q . '%')
+        $user = Product::where('prod_name', 'LIKE', '%' . $q . '%')
+                        ->orWhere('uniqueCode', 'LIKE', '%' . $q . '%')
                         ->get();
         if(count($user) >0)
-            return view('welcome')->withDetails($user)->withQuery($q);
+            return view('search.index')->withDetails($user)->withQuery($q);
 
     }
-    return view('welcome')->withMessage("Please Enter a Word");
+    return view('search.index')->withMessage("No Product Found");
 
 });
 
