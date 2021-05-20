@@ -93,56 +93,26 @@
                             <p>{{$product->prod_desc}}</p>
                         </div>
                         <div id="newElementId" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
-                        <form method="POST" action="">
+                        {{ Form::open(['route'=>'measure.save']) }}
+                            @csrf
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" id="formGroupExampleInput" name="product_id" value="{{$product->id}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" class="form-control" id="formGroupExampleInput" name="category_id" value="{{$product->category_id}}">
+                        </div>
+                            @foreach($category_measure as $cat_measure)
+                                @foreach($cat_measure->measurement_column as $column)
                             <div class="form-group">
-                                <label for="formGroupExampleInput">Length</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput"  placeholder="Length">
+                                <label for="formGroupExampleInput">{{ucwords(str_replace("_"," ",$column))}}</label>
+                                <input type="text" class="form-control" id="formGroupExampleInput" name="{{$column}}" placeholder="Enter {{ucwords(str_replace("_"," ",$column))}}">
                             </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">Shoulder</label>
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Shoulder">
-                            </div>
-                        </form>
+                                @endforeach
+                            @endforeach
+                                <button class="btn btn-success pull-right" type="submit" style="margin-top: 15px !important;">
+                                    Submit
+                                </button>
+                        {{ Form::close() }}
                         <!-- Add to Cart Form -->
                        {{-- <form class="cart clearfix" method="post">
                             <div class="cart-btn d-flex mb-50">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Category_Measurement;
 use App\Customer;
 use App\Http\Requests\CustomerCreateRequest;
 use App\Product;
@@ -56,7 +57,8 @@ class FrontendController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
-        return view('frontend.product-details',compact('product'));
+        $category_measure = Category_Measurement::all();
+        return view('frontend.product-details',compact('product', 'category_measure'));
     }
     public function userlogin(){
         return view('frontend.loginregister');

@@ -58,6 +58,9 @@ Route::get('/admin-category-measure/{category_measure}/edit', 'CategoryMeasureme
 Route::put('/admin-category-measure/{category_measure}/update', 'CategoryMeasurementController@update')->name('categorymeasure.update');
 Route::get('/admin-category-measure/{id}', 'CategoryMeasurementController@destroy')->name('categorymeasure.destroy');
 
+/*------------------------------ Measurement routes -----------------------------*/
+Route::post('/measurementSave', 'MeasurementController@saveData')->name('measure.save');
+
 /* ---------------------------Frontend Routes ------------------------*/
 
 Route::get('/', 'FrontendController@index')->name("front.home");
@@ -87,7 +90,6 @@ Route::post('/search', function(){
                         ->get();
         if(count($user) >0)
             return view('search.index')->withDetails($user)->withQuery($q);
-
     }
     return view('search.index')->withMessage("No Product Found");
 
