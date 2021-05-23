@@ -51,7 +51,15 @@ Route::PUT('/admin-category/{category}/update', 'CategoryController@update')->na
 Route::get('/admin-category/{id}', 'CategoryController@destroy')->name('category.destroy');
 
 /*--------------------------Category_measurement routes ----------------------*/
-Route::get('/admin_category_measure', 'CategoryMeasurementController@store')->name('categoryMeasurement.store');
+Route::get('/admin-category-measure', 'CategoryMeasurementController@index');
+Route::get('/admin-category-measure/create', 'CategoryMeasurementController@create')->name('categorymeasure.create');
+Route::post('/admin-category-measure/store', 'CategoryMeasurementController@store')->name('categorymeasure.store');
+Route::get('/admin-category-measure/{category_measure}/edit', 'CategoryMeasurementController@edit')->name('categorymeasure.edit');
+Route::put('/admin-category-measure/{category_measure}/update', 'CategoryMeasurementController@update')->name('categorymeasure.update');
+Route::get('/admin-category-measure/{id}', 'CategoryMeasurementController@destroy')->name('categorymeasure.destroy');
+
+/*------------------------------ Measurement routes -----------------------------*/
+Route::post('/measurementSave', 'MeasurementController@saveData')->name('measure.save');
 
 /* ---------------------------Frontend Routes ------------------------*/
 
@@ -75,10 +83,4 @@ Auth::routes();
 
 Route::post('/search', 'SearchFunctionalityController@index');
 
-
-
-/*--------------------Rating route -------------------------------*/
-//Route::post('/rating', function(){
-//
-//});
 
