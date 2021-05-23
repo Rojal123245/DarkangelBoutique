@@ -1,6 +1,9 @@
 @extends('layout')
 
 @section('content')
+    @if(isset($message))
+        <h4>{{$message}}</h4>
+    @endif
     <!-- Product Details Area Start -->
     <div class="single-product-area section-padding-100 clearfix">
         <div class="container-fluid">
