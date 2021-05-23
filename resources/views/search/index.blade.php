@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-
+    @if(isset($details))
     @foreach($details as $product)
     <!-- Product Details Area Start -->
     <div class="single-product-area section-padding-100 clearfix">
@@ -181,6 +181,7 @@
         }
     </script>
     @endforeach
+    @endif
 @endsection
 
 

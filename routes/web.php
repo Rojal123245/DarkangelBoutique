@@ -73,21 +73,12 @@ Auth::routes();
 
 //------------------------Search Routes -------------------------
 
-Route::post('/search', function(){
-    $q = Request('q');
-
-    if($q != " "){
-        $user = Product::where('prod_name', 'LIKE', '%' . $q . '%')
-                        ->orWhere('uniqueCode', 'LIKE', '%' . $q . '%')
-                        ->get();
-        if(count($user) >0)
-            return view('search.index')->withDetails($user)->withQuery($q);
-
-    }
-    return view('search.index')->withMessage("No Product Found");
-
-});
+Route::post('/search', 'SearchFunctionalityController@index');
 
 
-//Route::get('/search', 'ShopController@search')->name('search');
+
+/*--------------------Rating route -------------------------------*/
+//Route::post('/rating', function(){
+//
+//});
 

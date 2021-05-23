@@ -2,24 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use App\User;
 use Illuminate\Http\Request;
 use Symfony\Component\Console\Input\Input;
 
 class SearchFunctionalityController extends Controller{
     public function index(){
-        $q = Input::get ( 'q' );
-        if($q != ""){
-            $user = User::where ( 'name', 'LIKE', '%' . $q . '%')
-                ->orWhere ('email', 'LIKE', '%' . $q . '%' )->get ();
-            if(count ($user ) > 0)
-                return view ( 'search-functionality-in-laravel/layout' )->withDetails ($q);
+        $q = Request('q');
+
+        if($q != " "){
+            $user = Product::where('prod_name', 'LIKE', '%' . $q . '%')
+                ->orWhere('uniqueCode', 'LIKE', '%' . $q . '%')
+                ->get();
+            if(count($user) >0)
+                return view('search.index')->withDetails($user)->withQuery($q);
+
         }
-        return view ( 'search-functionality-in-laravel/layout')->withMessage ('No Detail found. Try to search again !');
+        return view('search.index')->withMessage("No Product Found");
+
     }
+
 }
 
-//public function search(Request $request)
-//{
-//    return view('search-results');
-//}
+

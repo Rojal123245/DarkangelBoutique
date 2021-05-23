@@ -69,18 +69,51 @@
                                 <h5>#{{$product->uniqueCode}}{{$product->id}}</h5>
                             </a>
                             <!-- Ratings & Review -->
-                            <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
-                                <div class="ratings">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
+
+
+                            <h1>Rate Me</h1>
+
+                            <form class="rating" id="product1">
+                                <button type="submit" class="star" data-star="1">
+                                    &#9733;
+                                    <span class="screen-reader">1 Star</span>
+
+                                </button>
+
+                                <button type="submit" class="star" data-star="2">
+                                    &#9733;
+                                    <span class="screen-reader">2 Stars</span>
+                                </button>
+
+                                <button type="submit" class="star" data-star="3">
+                                    &#9733;
+                                    <span class="screen-reader">3 Stars</span>
+                                </button>
+
+                                <button type="submit" class="star" data-star="4">
+                                    &#9733;
+                                    <span class="screen-reader">4 Stars</span>		       </button>
+
+                                <button type="submit" class="star" data-star="5">
+                                    &#9733;
+                                    <span class="screen-reader">5 Stars</span>
+                                </button>
+                            </form>
+
+
+
+{{--                            <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">--}}
+{{--                                <div class="ratings">--}}
+{{--                                    <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                    <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                    <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                    <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                    <i class="fa fa-star" aria-hidden="true"></i>--}}
+{{--                                </div>--}}
 {{--                                <div class="review">--}}
 {{--                                    <a href="#" onclick="createReview();">Write A Review</a>--}}
 {{--                                </div>--}}
-                            </div>
+{{--                            </div>--}}
                             <!-- Avaiable -->
                             @if($product->status == "InStock")
                                 <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
