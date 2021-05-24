@@ -68,6 +68,9 @@ Route::post('/customerLogin/register', 'CustomerController@store')->name('custom
 Route::post('/customerLogin/login', 'CustomerController@login')->name('customer.customerLogin');
 
 /* ---------------------------Frontend Routes ------------------------*/
+Route::get('/order', 'DisplayOrderController@index')->name('order.index');
+
+/* ---------------------------Frontend Routes ------------------------*/
 
 Route::get('/', 'FrontendController@index')->name("front.home");
 Route::get('/prod-details/{id}/show', 'FrontendController@show')->name('front.show');
