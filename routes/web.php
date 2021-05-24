@@ -61,6 +61,12 @@ Route::get('/admin-category-measure/{id}', 'CategoryMeasurementController@destro
 /*------------------------------ Measurement routes -----------------------------*/
 Route::post('/measurementSave', 'MeasurementController@saveData')->name('measure.save');
 
+/* ---------------------------Customer Routes ------------------------*/
+Route::get('/customerLogin', 'CustomerController@index')->name('customer.login');
+Route::get('/customerRegister', 'CustomerController@register')->name('customer.register');
+Route::post('/customerLogin/register', 'CustomerController@store')->name('customer.store');
+Route::post('/customerLogin/login', 'CustomerController@login')->name('customer.customerLogin');
+
 /* ---------------------------Frontend Routes ------------------------*/
 
 Route::get('/', 'FrontendController@index')->name("front.home");
@@ -72,15 +78,10 @@ Route::get('/userLogin', 'FrontendController@userlogin')->name('front.login');
 Route::post('/saveLogin', 'FrontendController@saveLogin')->name('front.savelogin');
 Route::post('/saveRegister', 'FrontendController@saveRegister')->name('front.saveRegister');
 Route::get('/contactus', 'FrontendController@contact')->name('front.contact');
-//Route::get('/admin-product', function (){
-//
-//});
+
 Auth::routes();
-/*Route::get('/home', 'HomeController@index')->name('home');*/
-/*Route::get('/', 'FrontendController@index')->name('home');*/
 
 //------------------------Search Routes -------------------------
-
 Route::post('/search', 'SearchFunctionalityController@index');
 
 

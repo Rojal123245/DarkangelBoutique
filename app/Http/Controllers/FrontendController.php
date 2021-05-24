@@ -60,33 +60,6 @@ class FrontendController extends Controller
         $category_measure = Category_Measurement::all();
         return view('frontend.product-details',compact('product', 'category_measure'));
     }
-    public function userlogin(){
-        return view('frontend.loginregister');
-    }
-    public function userRegister(){
-        return view('frontend.register');
-    }
-    public function saveLogin(Request $request)
-    {
-        $model = Customer::where('email', $request->email)->first();
-        if ($model) {
-            if (Hash::check($request->password, $model->password)) {
-                session_start();
-                $_SESSION['useremail'] = $request->email;
-                return redirect()->route('front.home');
-            } else{
-                return redirect()->back()->with('error', 'Email or password did not match');
-            }
-        } else {
-            return redirect()->back()->with('error', 'Email or password did not match');
-        }
-    }
-    public function saveRegister(CustomerCreateRequest $request){
-        $password = Hash::make($request->password);
-        $request->merge(['password' => $password]);
-        $customerSave = Customer::create($request->all());
-        return redirect()->back()->with('success','Registration Successful');
-    }
     public function contact(){
         return view('frontend.contactus');
     }
