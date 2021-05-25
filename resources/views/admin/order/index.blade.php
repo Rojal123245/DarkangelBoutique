@@ -36,12 +36,25 @@
                                             <b>{{ucwords(str_replace("_"," ","$category"))}}: </b>{{$measure->$category}}<br>
                                         @endforeach
                                             </td>
-                                        <td>{{$measure->status}}</td>
                                         <td>
-                                            <a href="{{route('prod.edit', $measure->id)}}" class="btnEditDep btn btn-primary btn-xs"  title="Update items">
-                                                <i class="fa fa-pencil"></i>
+                                            @if($measure->status == 0)
+                                                {{'Not Completed'}}
+                                            @elseif($measure->status == 1)
+                                                {{'Completed'}}
+                                            @elseif($measure->status == 2)
+                                                {{'Payed'}}
+                                            @else
+                                                {{'Cancelled'}}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{route('order.status', $measure->id)}}" class="btnEditDep btn btn-primary btn-xs"  title="Update items">
+                                                <i class="fa fa-check "></i>
                                             </a>
-                                            <a href="{{route('prod.destroy',$measure->id)}}" >
+                                            <a href="{{route('order.cancel', $measure->id)}}" class="btnEditDep btn btn-danger btn-xs"  title="Update items">
+                                                <i class="fa fa-times "></i>
+                                            </a>
+                                            <a href="{{route('order.destroy',$measure->id)}}" >
                                                 <button class="btn btn-danger btn-xs">
                                                     <i class="fa fa-trash-o "></i></button>
                                             </a>

@@ -69,6 +69,9 @@ Route::post('/customerLogin/login', 'CustomerController@login')->name('customer.
 
 /* ---------------------------Frontend Routes ------------------------*/
 Route::get('/order', 'DisplayOrderController@index')->name('order.index');
+Route::get('/order/{measure}/status', 'DisplayOrderController@changeStatus')->name('order.status');
+Route::get('/order/{measure}/cancel', 'DisplayOrderController@CancelStatus')->name('order.cancel');
+Route::get('/order/{id}', 'DisplayOrderController@destroy')->name('order.destroy');
 
 /* ---------------------------Frontend Routes ------------------------*/
 
