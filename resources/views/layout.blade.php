@@ -17,6 +17,9 @@
     <!-- Core Style CSS -->
     <link rel="stylesheet" href={{asset("css/core-style.css")}}>
     <link rel="stylesheet" href={{asset("style.css")}}>
+    <link rel="stylesheet" href={{asset("css/rating.css")}}>
+
+
 
 </head>
 
@@ -169,7 +172,7 @@
     <!-- Plugins js -->
     <script src={{asset("js/plugins.js")}}></script>
     <script src={{asset("js/active.js")}}></script>
-
+    <script type="text/javascript" src={{asset("js/rating.js")}}></script>
 </body>
 
 </html>

@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fb2aa4ba-93ec-4d21-8861-aab4d3f27a8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/product-details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/product-details.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,6 +124,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1TSoQkPtwFuqceuH2yAESD4cJqv" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -139,6 +143,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\php\xampp\htdocs\DarkangelBoutique\app\Http\Controllers" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -169,7 +178,13 @@
       <workItem from="1620622995417" duration="74000" />
       <workItem from="1621145462382" duration="3023000" />
       <workItem from="1621231457435" duration="10295000" />
-      <workItem from="1621317836414" duration="2138000" />
+      <workItem from="1621317836414" duration="3932000" />
+      <workItem from="1621401267099" duration="5371000" />
+      <workItem from="1621493576024" duration="1891000" />
+      <workItem from="1621518290742" duration="1618000" />
+      <workItem from="1621580481051" duration="3370000" />
+      <workItem from="1621747714381" duration="7095000" />
+      <workItem from="1621918901266" duration="4891000" />
     </task>
     <servers />
   </component>

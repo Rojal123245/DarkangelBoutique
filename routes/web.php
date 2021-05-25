@@ -68,6 +68,12 @@ Route::post('/customerLogin/register', 'CustomerController@store')->name('custom
 Route::post('/customerLogin/login', 'CustomerController@login')->name('customer.customerLogin');
 
 /* ---------------------------Frontend Routes ------------------------*/
+Route::get('/order', 'DisplayOrderController@index')->name('order.index');
+Route::get('/order/{measure}/status', 'DisplayOrderController@changeStatus')->name('order.status');
+Route::get('/order/{measure}/cancel', 'DisplayOrderController@CancelStatus')->name('order.cancel');
+Route::get('/order/{id}', 'DisplayOrderController@destroy')->name('order.destroy');
+
+/* ---------------------------Frontend Routes ------------------------*/
 
 Route::get('/', 'FrontendController@index')->name("front.home");
 Route::get('/prod-details/{id}/show', 'FrontendController@show')->name('front.show');
@@ -85,3 +91,9 @@ Auth::routes();
 Route::post('/search', 'SearchFunctionalityController@index');
 
 
+/*------------------------- Rating Route ------------------- */
+//Route::get('/rating', function() {
+//    return View::make('product-details');
+//});
+
+//Route::post('/rating', 'RatingController@receiveData')->name('postData');
