@@ -367,6 +367,8 @@
                             </li>
                             <li><a href="/admin-category-measure">Category_Measurement</a>
                             </li>
+                            <li><a href="/order">Orders</a>
+                            </li>
                         </ul>
                     </div>
                     <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
