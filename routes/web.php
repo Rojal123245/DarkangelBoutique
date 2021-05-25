@@ -91,3 +91,9 @@ Auth::routes();
 Route::post('/search', 'SearchFunctionalityController@index');
 
 
+/*------------------------- Rating Route ------------------- */
+//Route::get('/rating', function() {
+//    return View::make('product-details');
+//});
+
+//Route::post('/rating', 'RatingController@receiveData')->name('postData');
