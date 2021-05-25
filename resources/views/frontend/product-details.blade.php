@@ -74,6 +74,7 @@
                             <!-- Ratings & Review -->
 
 
+
                             <h1>Rate Me</h1>
 
                             <form class="rating" id="product1">
@@ -95,13 +96,15 @@
 
                                 <button type="submit" class="star" data-star="4">
                                     &#9733;
-                                    <span class="screen-reader">4 Stars</span>		       </button>
+                                    <span class="screen-reader">4 Stars</span>
+                                </button>
 
                                 <button type="submit" class="star" data-star="5">
                                     &#9733;
                                     <span class="screen-reader">5 Stars</span>
                                 </button>
                             </form>
+
 
 
 
