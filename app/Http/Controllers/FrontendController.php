@@ -7,7 +7,9 @@ use App\Category_Measurement;
 use App\Customer;
 use App\Http\Requests\CustomerCreateRequest;
 use App\Product;
+use App\Rating;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class FrontendController extends Controller
@@ -52,13 +54,30 @@ class FrontendController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function show($id)
     {
         $product = Product::findOrFail($id);
         $category_measure = Category_Measurement::all();
-        return view('frontend.product-details',compact('product', 'category_measure'));
+        $product_related_ratings = DB::table('ratings')->where('product_id','=', $id)->get();
+        $allRatings = $product_related_ratings->count();
+
+        $ratings = Rating::select('rating', 'product_id')->get();
+        $totalRating =0;
+        foreach ($ratings as $rate){
+            if($id == $rate->product_id) {
+                $totalRating += $rate->rating;
+            }else{
+                $totalRating = 1;
+            }
+        }
+        if($allRatings == 0){
+            $displayRating = 0;
+        }else{
+            $displayRating = $totalRating/$allRatings;
+        }
+        return view('frontend.product-details',compact('product', 'category_measure', 'displayRating'));
     }
     public function contact(){
         return view('frontend.contactus');

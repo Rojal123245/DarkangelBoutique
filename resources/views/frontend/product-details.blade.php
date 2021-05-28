@@ -78,34 +78,37 @@
                             <h1>Rate Me</h1>
 
                             <form class="rating" id="product1">
-                                <button type="submit" class="star" data-star="1">
+                                <head> <meta name="csrf-token" content="{{ csrf_token() }}" /></head>
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                                <button type="submit" class="star" id="add" name="star1" onclick="addUpdateData(value)" data-star="1" value="1">
                                     &#9733;
                                     <span class="screen-reader">1 Star</span>
 
                                 </button>
 
-                                <button type="submit" class="star" data-star="2">
+                                <button type="submit" class="star" id="add" name="star2" onclick="addUpdateData(value)" data-star="2" value="2">
                                     &#9733;
                                     <span class="screen-reader">2 Stars</span>
                                 </button>
 
-                                <button type="submit" class="star" data-star="3">
+                                <button type="submit" class="star " id="add" name="star3" onclick="addUpdateData(value)" data-star="3" value="3" >
                                     &#9733;
                                     <span class="screen-reader">3 Stars</span>
                                 </button>
 
-                                <button type="submit" class="star" data-star="4">
+                                <button type="submit" class="star" id="add" name="star4" onclick="addUpdateData(value)" data-star="4" value="4">
                                     &#9733;
                                     <span class="screen-reader">4 Stars</span>
                                 </button>
 
-                                <button type="submit" class="star" data-star="5">
+                                <button type="submit" class="star" id="add" name="star5" onclick="addUpdateData(value)" data-star="5" value="5">
                                     &#9733;
                                     <span class="screen-reader">5 Stars</span>
                                 </button>
                             </form>
-
-
+                            @if($displayRating > 0)
+                             <p>User Rating: {{round($displayRating)}} star out of 5</p>
+                            @endif
 
 
 {{--                            <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">--}}
@@ -133,7 +136,7 @@
                         </div>
                         <div id="newElementId" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
                         {{ Form::open(['route'=>'measure.save']) }}
-                            @csrf
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                         <div class="form-group">
                             <input type="hidden" class="form-control" id="formGroupExampleInput" name="product_id" value="{{$product->id}}">
                         </div>
@@ -187,6 +190,35 @@
             document.getElementById("newElementId").appendChild(txtNewInputBox);
         }
     </script>
+    <script>
+        function addUpdateData($value) {
+            $(function() {
+                let _token   = $('meta[name="csrf-token"]').attr('content');
+                let star = $value;
+                let product =  $("input[name=product_id]").val();
+                $.ajax({
+                    method: "post",
+                    url: "{{route('rating.save')}}",
+                    data: {
+                        _token: _token,
+                        rating : star,
+                        product_id : product
+                    },
+                    success: function(response) {
+                        // window.location = '/customerLogin'
+                       console.log(response);
+                       if (response['login']){
+                           console.log('Test')
+                           alert(response['success'])
+                       }else{
+                           window.location = '/customerLogin'
+                       }
+                    }
+                });
+            });
+        }
+    </script>
+
     @endsection
 
 
