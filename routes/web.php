@@ -73,6 +73,9 @@ Route::get('/order/{measure}/status', 'DisplayOrderController@changeStatus')->na
 Route::get('/order/{measure}/cancel', 'DisplayOrderController@CancelStatus')->name('order.cancel');
 Route::get('/order/{id}', 'DisplayOrderController@destroy')->name('order.destroy');
 
+/* ---------------------------Rating Routes ------------------------*/
+Route::post('/rating', 'RatingController@saveRating')->name('rating.save');
+
 /* ---------------------------Frontend Routes ------------------------*/
 
 Route::get('/', 'FrontendController@index')->name("front.home");
