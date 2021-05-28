@@ -20,7 +20,7 @@ class EmailController extends Controller
 
         });
 
-        return redirect('/admin-home/sendEmail');
+        return redirect('/admin-home/email');
 
 
 

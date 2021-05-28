@@ -5,6 +5,7 @@
 <form method="post" action="/admin-home/sendEmail">
 
     @csrf
+
     <input type="text" name="userEmail">
     <input type="text" name="message">
     <input type="submit" value="Submit">
