@@ -100,3 +100,8 @@ Route::post('/search', 'SearchFunctionalityController@index');
 //});
 
 //Route::post('/rating', 'RatingController@receiveData')->name('postData');
+
+
+/*-------------------------------Email Route-------------*/
+Route::get('/admin-home/email','EmailController@sendEmail');
+Route::post('/admin-home/sendEmail','EmailController@Email');

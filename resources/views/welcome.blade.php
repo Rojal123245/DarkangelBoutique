@@ -369,6 +369,8 @@
                             </li>
                             <li><a href="/order">Orders</a>
                             </li>
+                            <li><a href="/admin-home/email">Send Email</a>
+                            </li>
                         </ul>
                     </div>
                     <div id="mailbox" class="tab-pane notika-tab-menu-bg animated flipInX">
