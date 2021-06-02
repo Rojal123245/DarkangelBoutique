@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Category_Measurement;
+use App\Http\Requests\CategoryMeasureRequest;
 use Illuminate\Http\Request;
 
 class CategoryMeasurementController extends Controller
@@ -44,7 +45,7 @@ class CategoryMeasurementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryMeasureRequest $request)
     {
         $category_measure = Category_Measurement::create($request->all());
         return redirect()->back()->with('success', 'Category Measurement has been created');
@@ -81,7 +82,7 @@ class CategoryMeasurementController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryMeasureRequest $request, $id)
     {
         $category_measure = Category_Measurement::findOrFail($id);
 

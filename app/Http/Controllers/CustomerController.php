@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Http\Requests\CustomerCreateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -15,7 +16,7 @@ class CustomerController extends Controller
     public function register(){
         return view('customer.register');
     }
-    public function store(Request $request)
+    public function store(CustomerCreateRequest $request)
     {
         $password = Hash::make($request->password);
         $request->merge(['password' => $password]);
