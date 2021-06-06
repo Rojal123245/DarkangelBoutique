@@ -27,7 +27,7 @@ class CustomerCreateRequest extends FormRequest
             'fullname' => 'required | min:1',
             'address' => 'required | min:4',
             'contactno'=>'required | numeric | min:6',
-            'email' =>'required | unique | email',
+            'email' =>'required | email',
             'password' => 'required'
         ];
     }

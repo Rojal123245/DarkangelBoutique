@@ -65,7 +65,7 @@ Route::post('/measurementSave', 'MeasurementController@saveData')->name('measure
 Route::get('/customerLogin', 'CustomerController@index')->name('customer.login');
 Route::get('/customerRegister', 'CustomerController@register')->name('customer.register');
 Route::post('/customerLogin/register', 'CustomerController@store')->name('customer.store');
-Route::post('/customerLogin/login', 'CustomerController@login')->name('customer.customerLogin');
+Route::post('/customerLogin/login', 'CustomerController@login')->middleware('verified')->name('customer.customerLogin');
 
 /* ---------------------------Display Order Routes ------------------------*/
 Route::get('/order', 'DisplayOrderController@index')->name('order.index');
@@ -88,7 +88,7 @@ Route::post('/saveLogin', 'FrontendController@saveLogin')->name('front.savelogin
 Route::post('/saveRegister', 'FrontendController@saveRegister')->name('front.saveRegister');
 Route::get('/contactus', 'FrontendController@contact')->name('front.contact');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 //------------------------Search Routes -------------------------
 Route::post('/search', 'SearchFunctionalityController@index');
