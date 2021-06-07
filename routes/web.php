@@ -65,8 +65,8 @@ Route::post('/measurementSave', 'MeasurementController@saveData')->name('measure
 Route::get('/customerLogin', 'CustomerController@index')->name('customer.login');
 Route::get('/customerRegister', 'CustomerController@register')->name('customer.register');
 Route::post('/customerLogin/register', 'CustomerController@store')->name('customer.store');
-Route::post('/customerLogin/login', 'CustomerController@login')->middleware('verified')->name('customer.customerLogin');
-
+Route::post('/customerLogin/login', 'CustomerController@login')->name('customer.customerLogin');
+Route::get('/customerLogin/verify', 'CustomerController@verifyCode')->name('customer.emailVerify');
 /* ---------------------------Display Order Routes ------------------------*/
 Route::get('/order', 'DisplayOrderController@index')->name('order.index');
 Route::get('/order/{measure}/status', 'DisplayOrderController@changeStatus')->name('order.status');
