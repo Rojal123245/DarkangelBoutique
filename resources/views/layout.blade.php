@@ -75,6 +75,7 @@
                 <li class="{{ Request::path() === '/' ? 'active' : '' }}"><a href="/">Home</a></li>
                 <li class="{{ Request::path() === 'shop' ? 'active' : '' }}"><a href="/shop">Shop</a></li>
                 <li class="{{ Request::path() === 'contactus' ? 'active' : '' }}"><a href="/contactus">Contact Us</a></li>
+                <li class="{{ Request::path() === 'customerPortal' ? 'active' : '' }}"><a href="/customerPortal">Customer Portal</a></li>
 
             </ul>
         </nav>

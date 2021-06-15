@@ -97,7 +97,7 @@
                                 </button>
 
                                 <button type="submit" class="star" id="add" name="star4" onclick="addUpdateData(value)" data-star="4" value="4">
-                                    &#9733;
+                                    &#9733;->
                                     <span class="screen-reader">4 Stars</span>
                                 </button>
 

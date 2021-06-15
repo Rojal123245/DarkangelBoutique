@@ -67,4 +67,7 @@ class CustomerController extends Controller
             return redirect()->back()->with('error', 'Verfication code didn\'t match');
         }
     }
+    public function portal(){
+        return view('customer.portal');
+    }
 }
