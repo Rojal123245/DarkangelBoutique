@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\OfferMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Customer;
 
 class EmailController extends Controller
 {
@@ -17,12 +18,19 @@ class EmailController extends Controller
         request()->validate(['userEmail' =>'required|email']);
         $details = [
             'title' => 'this is a test email title',
-            'body' => 'this is a test body email'
+            'body' => Request('message')
         ];
-        Mail::to("rozalpra@gmail.com")->send(new OfferMail($details));
+        $customer = Customer::all('email');
+        foreach($customer as $email){
+            Mail::to($email)->send(new OfferMail($details));
+        }
+        
         return redirect('/admin-home/email')->with('message', 'email sent');
 
 
 
     }
+    
+    
+    
 }
